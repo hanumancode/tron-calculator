@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+	font-family: Poppins;
+	color: #555;
+}
+
+body {
+	height: 100vh;
+	background-image: linear-gradient(to right bottom, #e60815, #FF8F00);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.container {
+	max-width: 80rem;
+	padding: 3rem 4rem 4rem 4rem;
+	border: 3.5rem solid #eee;
+	background-color: #fff;
+	box-shadow: 0 3rem 8rem rgba(0, 0, 0, .2);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+/****** HEADER ******/
+
+.header {
+	display: flex;
+	align-items: center;
+	margin-bottom: 3rem;
+}
+
+.header_logo {
+	height: 7rem;
+	margin-right: 2.5rem;
+	display: inline-block;
+}
+
+.header_heading {
+	height: 7rem;
+	margin-right: 2.5rem;
+	display: inline-block;
+}
+
+/****** PRICE ******/
+
+.price {
+	display:  flex;
+	margin-bottom: 3rem;
+}
+
+.price_bought {
+	margin-right: 3rem;
+}
+
+.price_label {
+	display: block;
+	margin-bottom: .75rem;
+	font-size: 1.4rem;
+}
+
+.price_input, .investment_trx  {
+	padding: 1rem;
+	font-size: 1.3rem;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	transition: all .2s;
+}
+
+.price_input::placeholder,
+.investment_trx::placeholder {
+	color: #ccc;
+}
+
+.price_input:focus,
+.investment_trx:focus {
+	color: #555;
+	outline: none;
+	border: 1px solid #FC9D22;
+}
+
+/****** INVESTMENT ******/
+
+.investment {
+	margin-bottom: 4rem;
+	display: flex;
+	align-items: center;
+}
+
+.investment>*:not(:last-child) {
+	margin-right: 2rem;
+}
+
+.investment_text {
+	font-size: 1.8rem;
+}
+
+.investment_trx {
+    font-size: 1.8rem;
+}
+
+.investment_btn {
+	display: inline-block;
+	font-size: 1.6rem;
+	width: 6rem;
+	height: 6rem;
+	border-radius: 50%;
+	color: #fff;
+	background-color: #e60815;
+	border: none;
+	cursor: pointer;
+	transition: all .2s;
+}
+
+.investment_btn:hover {
+	background-color: #FF8F00;
+}
+
+.investment_btn:active {
+	transform: translateY(3px);
+}
+
+.investment_btn:focus {
+	outline: none;
+}
+
+/****** RESULT ******/
+
+.result {
+	font-size: 1.8rem;
+	font-weight: 700;
+}
