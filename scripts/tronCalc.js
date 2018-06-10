@@ -17,7 +17,8 @@ if (profit > 0) {
   //message = 'You made a profit of ' + profit + ' ' + 'USD';
   message = `You made a profit of ${profit} (${growth}%)`;
 } else if (profit < 0) {
-  message = 'You made a loss of ' + profit + ' ' + 'USD';
+  //message = 'You made a loss of ' + profit + ' ' + 'USD';
+  message = `You made a loss of ${profit} (${growth}%)`;
 } else {
   message = 'You\'re at breakeven';
 }
