@@ -18,11 +18,14 @@ console.log('profit = ', '$' + profit);
 console.log('growth = ', growth + '%');
 */
 
+let message = "";
+
 if (profit > 0) { 
-  console.log('You made a profit of ' + profit + ' ' + 'USD');
+  message = 'You made a profit of ' + profit + ' ' + 'USD';
 } else if (profit < 0) {
-  console.log('You made a loss of ' + profit + ' ' + 'USD');
+  message = 'You made a loss of ' + profit + ' ' + 'USD';
 } else {
-  console.log('You\'re at breakeven');
+  message = 'You\'re at breakeven';
 }
 
+console.log(message);
