@@ -11,13 +11,6 @@ const current = trx * trxUsdNow;
 const profit = current - invested;
 const growth = (profit / invested) * 100;
 
-/*
-console.log('amount of trx bought in USD value:', '$' + invested);
-console.log('trx value now', '$' + current);
-console.log('profit = ', '$' + profit);
-console.log('growth = ', growth + '%');
-*/
-
 let message = "";
 
 if (profit > 0) { 
