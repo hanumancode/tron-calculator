@@ -14,7 +14,8 @@ const growth = (profit / invested) * 100;
 let message = "";
 
 if (profit > 0) { 
-  message = 'You made a profit of ' + profit + ' ' + 'USD';
+  //message = 'You made a profit of ' + profit + ' ' + 'USD';
+  message = `You made a profit of ${profit} (${growth}%)`;
 } else if (profit < 0) {
   message = 'You made a loss of ' + profit + ' ' + 'USD';
 } else {
