@@ -1,64 +1,45 @@
 // Troncoin Calculator
 
-const trx = 3.5;
-const trxUsdBought = 10000;
-const trxUsdNow = 12000;
+const calcGrowth = (pastValue,currentValue) => (currentValue - pastValue) / pastValue * 100;
 
-const invested = trx * trxUsdBought;
+
+document.querySelector('.investment_btn').addEventListener('click', function(){
+
+// logic for the callback function
+// 1. select and read data from the UI
+
+const trxUsdBought = document.querySelector('.price_input_bought').value;
+const trxUsdNow = document.querySelector('.price_input_now').value;
+const trx = document.querySelector('.investment_trx').value;
+
+// 2. calculate the profits
+
+const invested = trxUsdBought * trx;
 const current = trx * trxUsdNow;
-
 const profit = current - invested;
-//const growth = (profit / invested) * 100;
-
 const growth = calcGrowth(invested, current);
 
-// function declaration to calculate growth for investment
-function calcGrowth(pastValue, currentValue){
 
-  const g = ((currentValue - pastValue) / pastValue) * 100;
+console.log('trx bought value', trxUsdBought);
+console.log('trxUsdNow', trxUsdNow);
 
-  return g;
-
-}
+console.log('trx', trx);
 
 
-// function expression ES5 version
-const calcGrowth2 = function(pastValue, currentValue) {
-  return (currentValue - pastValue) / pastValue * 100
-}
-
-const growth2 = calcGrowth2(5000,5500);
-console.log('calcGrowth2 ES5 version:', growth2);
-
-// ES6 version arrow function
-const calcGrowth3 = (pastValue,currentValue) => (currentValue - pastValue) / pastValue * 100;
-const growth3 = calcGrowth3(20, 60);
-console.log('calcGrowth3 ES56 version:', growth3);
-
-
-// profit, loss, breakeven message
+// 3. write result to the UI
 let message = "";
 
 if (profit > 0) { 
-  //message = 'You made a profit of ' + profit + ' ' + 'USD';
-  message = `You made a profit of ${profit} (${growth}%)`;
+  message = `You made a profit of $${profit} (${growth}%)`;
 } else if (profit < 0) {
-  //message = 'You made a loss of ' + profit + ' ' + 'USD';
-  message = `You made a loss of ${profit} (${growth}%)`;
+  message = `You made a loss of $${profit} (${growth}%)`;
 } else {
   message = 'You\'re at breakeven';
 }
 
-console.log(message);
+document.querySelector('.result').textContent = message;
 
-
-// DOM manipulation: selecting elements / handling events
-
-document.querySelector('.investment_btn').addEventListener('click', function(){
-
-console.log('ok investment_btn clicked')
 });
-
 
 
 
