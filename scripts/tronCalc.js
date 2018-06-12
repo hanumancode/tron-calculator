@@ -31,10 +31,13 @@ let message = "";
 
 if (profit > 0) { 
   message = `You made a profit of $${profit} (${growth}%)`;
+  document.querySelector('.result').style.color = 'green';
 } else if (profit < 0) {
   message = `You made a loss of $${profit} (${growth}%)`;
+  document.querySelector('.result').style.color = 'red';
 } else {
   message = 'You\'re at breakeven';
+  document.querySelector('.result').style.color = 'black'; 
 }
 
 document.querySelector('.result').textContent = message;
