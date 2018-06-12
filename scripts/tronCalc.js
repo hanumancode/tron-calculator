@@ -3,7 +3,7 @@
 const calcGrowth = (pastValue,currentValue) => (currentValue - pastValue) / pastValue * 100;
 
 
-document.querySelector('.investment_btn').addEventListener('click', function(){
+document.querySelector('.investment_btn').addEventListener('click', () => {
 
 // logic for the callback function
 // 1. select and read data from the UI
@@ -20,44 +20,28 @@ const profit = current - invested;
 const growth = calcGrowth(invested, current);
 
 
-console.log('trx bought value', trxUsdBought);
-console.log('trxUsdNow', trxUsdNow);
+// console.log('trx bought value', trxUsdBought);
+// console.log('trxUsdNow', trxUsdNow);
 
-console.log('trx', trx);
+// console.log('trx', trx);
 
 
 // 3. write result to the UI
 let message = "";
 
+const resultField = document.querySelector('.result');
+
 if (profit > 0) { 
   message = `You made a profit of $${profit} (${growth}%)`;
-  document.querySelector('.result').style.color = 'green';
+  resultField.style.color = 'green';
 } else if (profit < 0) {
   message = `You made a loss of $${profit} (${growth}%)`;
-  document.querySelector('.result').style.color = 'red';
+  resultField.style.color = 'red';
 } else {
   message = 'You\'re at breakeven';
-  document.querySelector('.result').style.color = 'black'; 
+  resultField.style.color = 'black'; 
 }
 
 document.querySelector('.result').textContent = message;
 
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
