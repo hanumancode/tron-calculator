@@ -45,3 +45,23 @@ if (profit > 0) {
 document.querySelector('.result').textContent = message;
 
 });
+
+
+  window.onload = function() {
+
+  setTimeout(function() {
+
+    let trxSpan = document.querySelectorAll('span')[1].innerText;
+    console.log(typeof(trxSpan));
+    let length = 8;
+    let trimmedTrx = trxSpan.substring(0, length);
+    console.log(typeof(Number(trimmedTrx)), trimmedTrx);
+
+    document.getElementsByClassName("price_input price_input_now")[0].value = trimmedTrx;
+
+
+
+  }, 1000)
+  };
+
+
