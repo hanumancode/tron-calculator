@@ -19,7 +19,6 @@ const current = trx * trxUsdNow;
 const profit = current - invested;
 const growth = calcGrowth(invested, current);
 
-
 // console.log('trx bought value', trxUsdBought);
 // console.log('trxUsdNow', trxUsdNow);
 
@@ -46,22 +45,26 @@ document.querySelector('.result').textContent = message;
 
 });
 
+// load TRX price to input number field after data is loaded.
 
-  window.onload = function() {
+window.addEventListener('load', function(){
 
   setTimeout(function() {
+    console.log("all assets are loaded");
 
-    let trxSpan = document.querySelectorAll('span')[1].innerText;
-    console.log(typeof(trxSpan));
+    trx = document.getElementById('current_trx_price');
+    console.log(trx.attributes.placeholder);
+
+    trx_price_coinmarketsource = document.querySelectorAll('span')[1].innerText;
+    
+    console.log('trx_price_coinmarketsource', trx_price_coinmarketsource);
+
     let length = 8;
-    let trimmedTrx = trxSpan.substring(0, length);
-    console.log(typeof(Number(trimmedTrx)), trimmedTrx);
+    let trimmedTrx = trx_price_coinmarketsource.substring(0, length);
+    console.log (typeof(Number(trimmedTrx)), trimmedTrx);
 
-    document.getElementsByClassName("price_input price_input_now")[0].value = trimmedTrx;
+    trx.value = trimmedTrx;
 
+  },1000)
 
-
-  }, 1000)
-  };
-
-
+});
