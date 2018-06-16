@@ -50,21 +50,23 @@ document.querySelector('.result').textContent = message;
 window.addEventListener('load', function(){
 
   setTimeout(function() {
-    console.log("all assets are loaded");
+   // console.log("all assets are loaded");
 
     trx = document.getElementById('current_trx_price');
-    console.log(trx.attributes.placeholder);
+   // console.log(trx.attributes.placeholder);
 
     trx_price_coinmarketsource = document.querySelectorAll('span')[1].innerText;
     
-    console.log('trx_price_coinmarketsource', trx_price_coinmarketsource);
+   // console.log('trx_price_coinmarketsource', trx_price_coinmarketsource);
 
     let length = 8;
     let trimmedTrx = trx_price_coinmarketsource.substring(0, length);
-    console.log (typeof(Number(trimmedTrx)), trimmedTrx);
+   // console.log (typeof(Number(trimmedTrx)), trimmedTrx);
 
     trx.value = trimmedTrx;
 
   },1000)
 
 });
+
+
